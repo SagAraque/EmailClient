@@ -1,0 +1,234 @@
+*{
+    -fx-blue: #11548f;
+    -fx-dark-blue: #0f497e;
+    -fx-gray: #ececec;
+    -fx-dark-gray: #dadada;
+}
+
+#body{
+    -fx-max-height: 500;
+    -fx-max-width: 800;
+    -fx-min-width: 800;
+    -fx-min-height: 500;
+
+    -fx-padding: 0;
+}
+
+.split-pane:horizontal > .split-pane-divider {
+    -fx-background-color: transparent;
+}
+
+#menu{
+    -fx-background-color: -fx-dark-blue;
+    -fx-max-height: 25px;
+    -fx-min-height: 25px;
+    -fx-min-width: 800px;
+    -fx-max-width: 800px;
+    -fx-alignment: center-right;
+    -fx-padding: 0 10 0 0;
+}
+
+.menu .label{
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+
+/*
+----- MENU STYLE -----
+*/
+
+#menu_body{
+    -fx-max-height: 500;
+    -fx-max-width: 180;
+    -fx-min-width: 180;
+    -fx-min-height: 500;
+
+    -fx-background-color: -fx-blue;
+}
+
+#button_container{
+    -fx-max-width: 180;
+    -fx-min-width: 180;
+    -fx-spacing: 5;
+}
+
+.button_text{
+    -fx-max-width: 180;
+    -fx-max-height: 25;
+    -fx-min-width: 180;
+    -fx-padding: 10 10 10 10;
+}
+
+.button_text:hover{
+    transition: -fx-background-color 0.5s;
+    -fx-background-color: -fx-dark-blue;
+    -fx-cursor: hand;
+}
+
+.button_selected{
+    -fx-background-color: -fx-dark-blue;
+    -fx-border-style: hidden hidden hidden solid;
+    -fx-border-width: 4;
+    -fx-border-color: white;
+
+    -fx-padding: 6 6 6 6;
+}
+
+#create_button{
+    -fx-max-width: 120;
+    -fx-min-width: 120;
+    -fx-border-color: white;
+    -fx-text-fill: white;
+    -fx-background-color: -fx-dark-blue;
+    -fx-border-radius: 5;
+    -fx-cursor: hand;
+}
+
+/*
+----- INBOX STYLE -----
+*/
+
+#inbox_container{
+    -fx-padding: 10;
+    -fx-min-width: 614;
+    -fx-max-width: 614;
+    -fx-spacing: 10;
+}
+
+.inbox_container_max{
+    -fx-max-height: 500;
+}
+
+.alert_inbox{
+    -fx-pref-height: 35px;
+    -fx-pref-width: 350px;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-background-color: -fx-blue;
+}
+
+/*
+----- EMAIL CONTAINER STYLE -----
+*/
+
+.email_container{
+    -fx-max-height: 25;
+    -fx-min-height: 25;
+    -fx-background-color: -fx-gray;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 0 10 0 10;
+    -fx-spacing: 30;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 0);
+    -fx-alignment: center-left;
+    -fx-cursor: hand;
+}
+
+.email_container_read{
+    -fx-background-color: -fx-dark-gray;
+}
+
+.email_text{
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+}
+
+.email_date{
+    -fx-min-width: 50;
+    -fx-alignment: center-right;
+}
+
+.email_from{
+    -fx-max-width: 120;
+    -fx-min-width: 120;
+}
+
+.email_from_large{
+    -fx-max-width: 180;
+    -fx-min-width: 180;
+}
+
+.email_subject{
+    -fx-max-width: 220;
+    -fx-min-width: 220;
+}
+
+.email_subject_large{
+    -fx-max-width: 280;
+    -fx-min-width: 280;
+}
+
+#email_read_subject{
+    -fx-font-size: 20px;
+    -fx-font-family: Arial;
+    -fx-font-weight: bold;
+}
+
+/*
+----- EMAIL READ STYLE -----
+*/
+
+#email_read_box{
+    -fx-spacing: 20;
+}
+
+.email_read_text{
+    -fx-font-family: Arial;
+}
+
+#email_read{
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-max-height: infinity;
+}
+
+#email_read_head{
+    -fx-min-height: 30;
+    -fx-max-height: 30;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-color: -fx-blue;
+    -fx-alignment: center-left;
+    -fx-padding: 0 5 0 5;
+    -fx-spacing: 10;
+}
+
+/*
+----- EMAIL WRITE STYLE -----
+*/
+
+.email_write_label{
+    -fx-font-family: Arial;
+    -fx-min-width: 50px;
+    -fx-max-width: 50px;
+}
+
+.email_write_container{
+    -fx-alignment: center-left;
+}
+
+.email_write_field{
+    -fx-min-width: 545px;
+    -fx-max-width: 545px;
+}
+
+#email_write_editor{
+    -fx-min-height: 340px;
+    -fx-max-height: 340px;
+}
+
+.email_write_send{
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-background-color: -fx-blue;
+    -fx-cursor: hand;
+    -fx-text-fill: white;
+    -fx-min-width: 120px;
+    -fx-max-width: 120px;
+}
+
+.email_write_send:hover{
+    -fx-background-color: -fx-dark-blue;
+}
+

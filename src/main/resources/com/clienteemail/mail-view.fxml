@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clienteemail.Controller">
+   <children>
+      <HBox id="menu" prefHeight="100.0" prefWidth="200.0" stylesheets="@styles.css">
+         <children>
+            <HBox alignment="CENTER_RIGHT" onMouseClicked="#reload" prefHeight="25.0" prefWidth="80.0" spacing="6.0">
+               <children>
+                  <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@refresh.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Label text="Recargar" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+         </children>
+      </HBox>
+      <SplitPane id="body" dividerPositions="0.5" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css">
+         <items>
+            <AnchorPane id="menu_body" maxHeight="522.0" prefHeight="522.0" prefWidth="200.0" stylesheets="@styles.css">
+               <children>
+                  <VBox id="button_container" alignment="TOP_CENTER" layoutY="137.0" prefHeight="96.0" prefWidth="180.0" stylesheets="@styles.css">
+                     <children>
+                        <HBox fx:id="inboxButton" onMouseClicked="#changeFolder" prefHeight="100.0" prefWidth="200.0" stylesheets="@styles.css">
+                           <children>
+                              <Label fx:id="inboxLabel" contentDisplay="CENTER" text="Recibidos" textFill="#f2f2f2">
+                                 <font>
+                                    <Font name="Arial Bold" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                           <styleClass>
+                              <String fx:value="button_text" />
+                              <String fx:value="button_selected" />
+                           </styleClass>
+                        </HBox>
+                        <HBox fx:id="sentButton" onMouseClicked="#changeFolder" prefHeight="100.0" prefWidth="200.0" styleClass="button_text" stylesheets="@styles.css">
+                           <children>
+                              <Label fx:id="sentLabel" contentDisplay="CENTER" text="Enviados" textFill="#f2f2f2">
+                                 <font>
+                                    <Font name="Arial Bold" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Button id="create_button" layoutX="30.0" layoutY="433.0" mnemonicParsing="false" onAction="#sendEmailView" stylesheets="@styles.css" text="Nuevo email">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="88.0" fitWidth="92.0" layoutX="46.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@email.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <ScrollPane fx:id="scroll" hbarPolicy="NEVER">
+               <content>
+                  <VBox id="inbox_container" fx:id="mailBox" alignment="TOP_CENTER" stylesheets="@styles.css" />
+               </content>
+            </ScrollPane>
+         </items>
+      </SplitPane>
+      <HBox fx:id="alert" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="alert_inbox" stylesheets="@styles.css" translateX="312.0" translateY="470.0" visible="false">
+         <children>
+            <Label fx:id="alertText" text="Label" textFill="#f8f8f8">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
